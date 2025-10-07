@@ -115,6 +115,39 @@ The framework includes examples with real-world datasets:
 4. **Sales Data** - Retail sales time series (Kaggle)
 5. **COVID-19 Cases** - Daily case counts (Johns Hopkins)
 
+
+
+### 📊 Forecasting Visualization
+
+The framework provides rich visualizations for forecast analysis:
+
+#### Forecast Example with Confidence Intervals
+
+![Forecast Example](assets/forecast_example.png)
+
+This example demonstrates:
+- **Historical Data** (blue line): 100 data points showing actual values with trend and seasonality
+- **Forecast** (purple dashed line): 30-day ahead prediction
+- **95% Confidence Interval** (shaded area): Uncertainty bounds around the forecast
+- **Separation Line**: Clear visual distinction between historical and predicted values
+
+The visualization makes it easy to:
+- Assess forecast quality and uncertainty
+- Identify trend continuation or changes
+- Evaluate seasonal patterns
+- Communicate results to stakeholders
+
+#### Additional Visualizations
+
+The framework automatically generates:
+- **Trend Decomposition**: Separate trend, seasonal, and residual components
+- **ACF/PACF Plots**: Autocorrelation analysis for model selection
+- **Residual Analysis**: QQ plots and residual distribution
+- **Model Comparison**: Side-by-side forecast comparison
+- **Feature Importance**: For ML-based models
+
+All plots are saved to `reports/figures/` and can be customized via configuration.
+
 ### 🚀 Quick Start
 
 #### Installation
