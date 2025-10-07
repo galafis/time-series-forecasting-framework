@@ -19,6 +19,55 @@
 
 ## English
 
+## 📊 Architecture Diagram
+
+```mermaid
+graph TB
+    A[Time Series Data] --> B[Preprocessing]
+    B --> C[Stationarity Check]
+    C -->|Non-Stationary| D[Differencing]
+    C -->|Stationary| E[Feature Engineering]
+    D --> E
+    E --> F{Model Selection}
+    F -->|Statistical| G[ARIMA/SARIMA/Prophet]
+    F -->|ML| H[XGBoost/LightGBM]
+    F -->|DL| I[LSTM/GRU/Transformer]
+    G --> J[Hyperparameter Tuning]
+    H --> J
+    I --> J
+    J --> K[Cross-Validation]
+    K --> L[Model Evaluation]
+    L --> M[Forecast Generation]
+    M --> N[Confidence Intervals]
+    
+    style A fill:#e1f5ff
+    style M fill:#c8e6c9
+    style F fill:#fff9c4
+```
+
+## 🔄 Forecasting Pipeline
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Forecaster
+    participant FeatureEng
+    participant Model
+    participant Evaluator
+    
+    User->>Forecaster: Load time series data
+    Forecaster->>FeatureEng: Extract features
+    FeatureEng-->>Forecaster: Lag, rolling, seasonal features
+    Forecaster->>Model: Train with features
+    Model-->>Forecaster: Trained model
+    Forecaster->>Model: Generate forecast
+    Model-->>Forecaster: Predictions
+    Forecaster->>Evaluator: Calculate metrics
+    Evaluator-->>User: RMSE, MAE, MAPE, etc.
+```
+
+
+
 ### 📋 Overview
 
 This project provides a unified framework for time series forecasting, implementing and comparing multiple approaches including classical statistical methods (ARIMA, SARIMA, Prophet), machine learning algorithms (XGBoost, LightGBM), and deep learning models (LSTM, GRU, Temporal Convolutional Networks). The framework supports univariate and multivariate forecasting, automatic hyperparameter tuning, comprehensive evaluation metrics, and interactive visualizations.
